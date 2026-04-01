@@ -1,0 +1,14 @@
+{
+  "main": {
+    "teamName": "kv",
+    "projectName": "cdk-platform",
+    "sourceRepoOrg": "karmanyav-123",
+    "sourceRepo": "aws-infra-cdk",
+    "notificationEmail": "",
+    "codestarArn": "arn:aws:codeconnections:us-east-2:219366469144:connection/ab9a0a03-1761-4051-b2b1-668867806bf1"
+  },
+  "environments": [
+    {"env": "dev","account": "219366469144","branch": "dev","disabled": false,"components": ["kms", "iam", "s3"]},
+    {"env": "prod","account": "219366469144","branch": "main","disabled": true,"components": ["kms", "iam", "s3"]}
+  ]
+}
