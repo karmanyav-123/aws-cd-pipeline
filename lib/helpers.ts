@@ -5,18 +5,20 @@
 export interface MainConfig {
   teamName: string;
   projectName: string;
-  sourceRepoOrg: string;        // GitHub org/username
-  sourceRepo: string;           // repo name: aws-infra-cdk
-  notificationEmail: string;    // approval notification email
-  codestarArn: string;          // AWS CodeStar GitHub connection ARN
+  pipelineName: string;
+  sourceRepoOrg: string;
+  sourceRepo: string;
+  sourceBranch: string;        // default branch (main) — used for pv, prod envs
+  notificationEmail: string;
+  codestarArn: string;
+  environments: Environment[];
 }
 
 export interface Environment {
-  env: string;                  // e.g. "dev", "prod"
-  account: string;              // AWS account ID
-  branch: string;               // GitHub branch to source from
-  disabled: boolean;            // set true to skip this env in pipeline
-  components: string[];         // e.g. ["kms", "iam", "s3"]
+  env: string;                  // e.g. "dev", "pv", "prod"
+  account: string;
+  disabled: boolean;
+  components: string[];
 }
 
 // ─────────────────────────────────────────────
@@ -28,4 +30,13 @@ export interface Environment {
  */
 export function getEnabledEnvironments(environments: Environment[]): Environment[] {
   return environments.filter((e) => !e.disabled);
+}
+
+/**
+ * Returns the branch to use for a given environment.
+ * dev env → "dev" branch
+ * all others → sourceBranch (main)
+ */
+export function getBranchForEnv(env: string, sourceBranch: string): string {
+  return env === 'dev' ? 'dev' : sourceBranch;
 }
