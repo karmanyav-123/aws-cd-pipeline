@@ -1,8 +1,14 @@
-*.js
-!jest.config.js
-*.d.ts
-node_modules
+# Compiled output — only from bin/ and lib/
+bin/*.js
+bin/*.d.ts
+lib/*.js
+lib/*.d.ts
 
-# CDK asset staging directory
-.cdk.staging
-cdk.out
+# CDK output
+cdk.out/
+
+# Dependencies
+node_modules/
+
+# CDK staging
+.cdk.staging/
