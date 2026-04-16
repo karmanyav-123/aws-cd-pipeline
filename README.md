@@ -63,8 +63,8 @@ aws-cd-pipeline/
     "sourceRepoOrg": "karmanyav-123",
     "sourceRepo": "aws-infra-cdk",
     "sourceBranch": "main",
-    "notificationEmail": "karmanyaverma6@gmail.com",
-    "codestarArn": "arn:aws:codeconnections:us-east-2:219366469144:connection/739142ab-0c49-4d57-9644-60d6610f6b6f",
+    "notificationEmail": "kv@gmail.com",
+    "codestarArn": "arn:aws:codeconnections:us-east-....",
     "environments": [
       {"env": "dev", "account": "acct-id", "disabled": false, "components": ["s3"]},
       {"env": "pv",  "account": "acct-id", "disabled": true,  "components": ["kms", "iam", "s3"]}
@@ -77,8 +77,8 @@ aws-cd-pipeline/
     "sourceRepoOrg": "karmanyav-123",
     "sourceRepo": "aws-infra-cdk",
     "sourceBranch": "main",
-    "notificationEmail": "karmanyaverma6@gmail.com",
-    "codestarArn": "arn:aws:codeconnections:us-east-2:219366469144:connection/739142ab-0c49-4d57-9644-60d6610f6b6f",
+    "notificationEmail": "kv@gmail.com",
+    "codestarArn": "arn:aws:codeconnections:us-east-.....",
     "environments": [
       {"env": "prod", "account": "acct-id", "disabled": true, "components": ["kms", "iam", "s3"]}
     ]
